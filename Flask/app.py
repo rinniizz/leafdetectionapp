@@ -15,9 +15,9 @@ import reshape
 import base64
 
 app = Flask(__name__)
-ngrok.set_auth_token("2EIasG8F5pF7JUJm7CvGp7cz00D_69nS7SRy3F85ozSDuyTej")
-CORS(app)
-run_with_ngrok(app)
+# ngrok.set_auth_token("2EIasG8F5pF7JUJm7CvGp7cz00D_69nS7SRy3F85ozSDuyTej")
+# CORS(app)
+# run_with_ngrok(app)
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='C:/Users/Rosary/yolov5/data/Disbest.pt',force_reload=False)
 folder_path = 'C:/Users/Rosary/Desktop/LeafDetectionProjectApp/images/'
