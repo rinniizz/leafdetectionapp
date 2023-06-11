@@ -17,8 +17,8 @@ app = Flask(__name__)
 CORS(app)
 # run_with_ngrok(app)
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='C:/Users/Rosary/yolov5/data/Disbest.pt',force_reload=False)
-folder_path = 'C:/Users/Rosary/Desktop/LeafDetectionProjectApp/images/'
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='./Disbest.pt',force_reload=False)
+folder_path = './images/'
 @app.route('/upload', methods=['POST'])
 def upload_image():
     if 'image' not in request.files:
@@ -77,7 +77,7 @@ def get_json():
 
 @app.route('/get_image')
 def get_image():
-    img_path = 'C:/Users/Rosary/Desktop/LeafDetectionProjectApp/imgprocess/img.jpg'
+    img_path = './imgprocess/img.jpg'
     return send_file(img_path, mimetype='image/jpeg')
 
 @app.route('/get_stat')

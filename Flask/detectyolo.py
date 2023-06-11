@@ -15,7 +15,7 @@ model.max_det = 1000
 
 image_list = []
 results_dict = {}
-folder_path = 'C:/Users/Rosary/Desktop/LeafDetectionProjectApp/images/'
+folder_path = './images/'
 for file in os.listdir(folder_path):
     if file.endswith(".jpg"):
         image = cv2.imread(os.path.join(folder_path, file))[..., ::-1]

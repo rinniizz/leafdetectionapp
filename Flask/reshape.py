@@ -35,7 +35,7 @@ def ShowImage(im):
     plt.figure()
     plt.imshow(cv2.cvtColor(im, cv2.COLOR_BGR2RGB))
     plt.show() 
-    plt.savefig('C:/Users/Rosary/Desktop/LeafDetectionProjectApp/imgprocess/img.jpg')
+    plt.savefig('./imgprocess/img.jpg')
 
 def Box_List(Box):
     b = []
@@ -118,7 +118,7 @@ def process_data():
         data = json.load(fp)
     print(data)
     print(data['detections'])
-    path = 'C:/Users/Rosary/Desktop/LeafDetectionProjectApp/images/'
+    path = './images/'
     keys = []
     for name in glob.glob(path + '*.jpg'):
         # print(name)
