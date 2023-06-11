@@ -1,8 +1,6 @@
 from flask import Flask,request,jsonify,json,send_file
-from flask_ngrok import run_with_ngrok
 import werkzeug
 from flask_cors import CORS
-from pyngrok import ngrok
 import torch
 from io import BytesIO
 from PIL import Image
@@ -16,7 +14,7 @@ import base64
 
 app = Flask(__name__)
 # ngrok.set_auth_token("2EIasG8F5pF7JUJm7CvGp7cz00D_69nS7SRy3F85ozSDuyTej")
-# CORS(app)
+CORS(app)
 # run_with_ngrok(app)
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='C:/Users/Rosary/yolov5/data/Disbest.pt',force_reload=False)
