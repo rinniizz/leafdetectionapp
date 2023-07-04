@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import json
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='C:/Users/Rosary/yolov5/data/Disbest.pt',force_reload=False)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='./Disbest.pt',force_reload=False)
 model.conf = 0.4
 model.iou = 0.8
 model.multilabel = True

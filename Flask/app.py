@@ -4,18 +4,20 @@ from flask_cors import CORS
 import torch
 from io import BytesIO
 from PIL import Image
+from flask_ngrok import run_with_ngrok
 import numpy as np
 import pandas as pd
-import sqlite3
 import detectyolo
 import db
 import reshape
 import base64
+from flask_cors import CORS
+from pyngrok import ngrok
 
 app = Flask(__name__)
-# ngrok.set_auth_token("2EIasG8F5pF7JUJm7CvGp7cz00D_69nS7SRy3F85ozSDuyTej")
+ngrok.set_auth_token("2EIasG8F5pF7JUJm7CvGp7cz00D_69nS7SRy3F85ozSDuyTej")
 CORS(app)
-# run_with_ngrok(app)
+run_with_ngrok(app)
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='./Disbest.pt',force_reload=False)
 folder_path = './images/'
@@ -77,7 +79,7 @@ def get_json():
 
 @app.route('/get_image')
 def get_image():
-    img_path = './imgprocess/img.jpg'
+    img_path = '../imgprocess/img.jpg'
     return send_file(img_path, mimetype='image/jpeg')
 
 @app.route('/get_stat')
